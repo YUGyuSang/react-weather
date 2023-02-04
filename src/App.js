@@ -12,10 +12,17 @@ function App() {
     navigator.geolocation.getCurrentPosition((position)=>{ // 익명 함수를 주어 만들었다.
       let lat = position.coords.latitude 
       let lon = position.coords.longitude
-
       console.log("현재 위치 -","위도:",lat,"경도:",lon);
+      getWeatherByCurrentLocation(lat, lon); // 정보넘겨주기
     });
-  }
+  };
+
+  const getWeatherByCurrentLocation = async(lat, lon) =>{ //비동기적으로 처리
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=1aa3253a785fd768b157ee07b30643f0`;
+    let response = await fetch(url)
+    let data = await response.json(); // json을 사용하는 이유는 fetch로 받으면 바로 데이터를 사용 할 수 없기 때문에 json으로 마무리를 해주어 데이터를 뿌려줄 수 있다.
+    console.log("data: ", data)
+  } 
 
   useEffect(()=>{
     getCurrentLocation() // 실행되자마다 현재위치 정보를 가져와야하기 때문에 useEffect에 적용한다.
