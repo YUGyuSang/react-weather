@@ -1,0 +1,22 @@
+body{
+    background: url(https://images.unsplash.com/photo-1496450681664-3df85efbd29f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHdlYXRoZXJ8ZW58MHx8MHx8&w=1000&q=80);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center; /*가로 가운데*/
+    align-items: center; /*세로 가운데*/
+    flex-direction: column; /*flex를 가로 정렬로 바꾸어 주기*/
+}
+
+.weather-box{
+    border: 3px solid white;
+    padding: 50px;
+    border-radius: 30px;
+    background-color: aliceblue;
+    margin: 20px;
+}
