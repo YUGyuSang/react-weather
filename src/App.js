@@ -30,7 +30,7 @@ function App() {
 
   const handleCityChange = (city) => {
     if (city == "current") {
-      setCity(null);
+      getCurrentLocation()
     } else {
       setCity(city);
     }
@@ -70,7 +70,7 @@ function App() {
       {loading? <div className='container'> <ClipLoader color={'#f88c6b'} loading={loading} size={150}/></div> : 
       <div className='container'>
       <WeatherBox weather={weather}/>
-      <WeatherButton cities = {cities} setCity={setCity} handleCityChange={handleCityChange} />
+      <WeatherButton cities = {cities} setCity={setCity} handleCityChange={handleCityChange}/>
     </div>}
       
     </div>

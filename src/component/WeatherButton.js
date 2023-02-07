@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap';
 
 
-const WeatherButton = ({cities,setCity,handleCityChange}) => {
+const WeatherButton = ({cities,setCity,handleCityChange,}) => {
     console.log("cities?", cities)
   return (
     <div  class="menu-container">
